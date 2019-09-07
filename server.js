@@ -68,6 +68,9 @@ var ipaddress = '148.72.212.173';
 app.listen(4000,function(){
     console.log("listening for request");
 });
+app.get('/',function(req,res){
+    res.send("Node Server Application Running")
+});
 // routes of api
 app.use('/hotel/api', appRoutes);
 
