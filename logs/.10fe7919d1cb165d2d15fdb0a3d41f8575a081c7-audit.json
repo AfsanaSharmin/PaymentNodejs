@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 5
+    },
+    "auditLog": "E:\\github-project\\PaymentNodejs\\logs\\.10fe7919d1cb165d2d15fdb0a3d41f8575a081c7-audit.json",
+    "files": [
+        {
+            "date": 1567885064497,
+            "name": "E:\\github-project\\PaymentNodejs\\logs\\app.log.2019-09-08",
+            "hash": "d56e926f44d7bef32642a2f8e922d7a2"
+        }
+    ]
+}

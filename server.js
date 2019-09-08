@@ -4,12 +4,13 @@ const cors = require("cors");
 // Configuring the database
 const mongoose = require("mongoose");
 const config = require('./config/config');
-
+const cool = require('cool-ascii-faces')
  var appRoutes = require('./routes/approutes');
  const  scheduler = require('./Scheduler/bookingStaticScheduler');
 //set upp express app
 const app=express();
-
+  //app.get('/', (req, res) => res.render('pages/index'))
+  app.get('/cool', (req, res) => res.send(cool()));
 app.use((req, res, next) =>{
     res.header('Access-Control-Allow-Origin','*')
     res.header('Access-Control-Allow-Headers',
@@ -27,7 +28,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 
-
+app.listen(4000,function(){
+    console.log("listening for request");
+});
 
 
 
@@ -65,13 +68,11 @@ var port = process.env.PORT || 27173
 //listen for requests
 var ipaddress = '148.72.212.173';
 
-app.listen(4000,function(){
-    console.log("listening for request");
-});
+
+// routes of api
+app.use('/hotel/api', appRoutes);
 app.get('/',function(req,res){
     res.send("Node Server Application Running")
 });
-// routes of api
-app.use('/hotel/api', appRoutes);
 
 module.exports = app;
