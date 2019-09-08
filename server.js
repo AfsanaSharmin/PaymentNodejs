@@ -53,12 +53,12 @@ app.listen(4000,function(){
 
 // plz change according to your database
 // Connecting to the database
-mongoose.connect('mongodb://localhost:27017/hotelServerDb', { useNewUrlParser: true }).then(() => {
-    console.log("Successfully connected to the database");
-}).catch(err => {
-    console.log('Could not connect to the database. Exiting now...');
-    process.exit();
-});
+//mongoose.connect('mongodb://localhost:27017/hotelServerDb', { useNewUrlParser: true }).then(() => {
+   // console.log("Successfully connected to the database");
+//}).catch(err => {
+   // console.log('Could not connect to the database. Exiting now...');
+  //  process.exit();
+//});
 
 app.use(function(err,req,res,next){
     res.status(422).send({error:err.message});
